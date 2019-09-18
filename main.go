@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	for i := 0; i < 200; i++ {
+	for i := 0; i < 300; i++ {
 		go func(a int) {
 			conn, err := net.Dial("tcp", "139.198.123.37:1883")
 			if err != nil {
@@ -25,8 +25,8 @@ func main() {
 				fmt.Fprint(os.Stderr, "connect: %v\n", err)
 			}
 
-			str := fmt.Sprintf("000000000000000%d", a)
-			cc.ClientId = str
+			//str := fmt.Sprintf("000000000000000%d", a)
+			//cc.ClientId = str
 			fmt.Println("connect with client id", cc.ClientId)
 
 			for {
